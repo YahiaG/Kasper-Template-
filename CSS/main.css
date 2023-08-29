@@ -1,0 +1,266 @@
+                                    /* Start Variables */
+:root{
+    --main-color: #19c8fa;
+    --transpatent-color: rgb(15 116 143 / 70%);
+}
+                                    /* End Variables */
+                                    /* Start Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@media (min-width:768px) {
+    .container{
+        width: 750px;
+    }
+    
+}
+@media (min-width:992px) {
+    .container{
+        width: 970px;
+    }
+    
+}
+@media (min-width:1200px) {
+    .container{
+        width: 1170px;
+    }
+    
+}
+
+                                    /* End Global  */
+
+                                    /* Start Landing  */
+.landing{
+    height: 100vh;
+    position: relative;
+}
+
+.landing::before{
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/landing.jpg");
+    background-size: cover;
+    background-color: #1f2021;
+    filter: brightness(.5);
+    z-index: -1;
+}
+
+.header{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    position: relative;
+
+}
+
+.header .container::after{
+    content: "";
+    height: 1px;
+    width: calc(100% - 30px);
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    background-color: #a2a2a2;
+}
+
+.header .logo {
+    width: 180px;
+}
+
+.header .logo img{
+    max-width: 100%;
+}
+
+.header nav{
+    flex: 1;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* position: relative; */
+}
+
+.header nav .icon{
+    display: none;
+    font-size: 20px;
+
+}
+
+
+.header nav ul{
+    display: flex;
+}
+
+
+.header nav a{
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+.header nav a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -19px;
+    z-index: 2;
+}
+
+.header nav a:hover,
+.header nav a.active{
+    color: var(--main-color);
+}
+
+.header nav a:hover::after,
+.header nav a.active::after{
+    border-bottom: 1px solid var(--main-color);
+    
+}
+
+                                                /* Small Scteen  */
+@media (max-width:767px) {
+    .header nav .icon{
+        display: block;    
+    }
+
+    .header nav ul{
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        background-color: rgba(0, 0, 0,.5);
+        z-index: 5;
+    }
+    
+    .header nav:hover ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header nav a{
+        padding: 10px 15px;
+    }
+
+    .header nav a::after{
+        display: none;
+    }
+
+    .header nav a:hover,
+    .header nav a.active{
+        border-bottom: 1px solid var(--main-color);    }
+}
+
+.header nav .search{
+    width: 40px;
+    height: 30px;
+    margin-left: 30px;
+    position: relative;
+    border-left: 1px solid white;
+}
+
+.header nav .search i{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+                                    /* Start Landing content  */
+
+.welcome{
+    position: absolute;
+    top: 50%;
+    width: 500px;
+    transform: translatey(-50%);
+    color: white;
+    padding: 30px;
+}
+
+@media (max-width:767px) {
+    .welcome{
+        width: 100%;
+    }
+    
+}
+
+.welcome::before{
+    content: "";
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color:var(--transpatent-color) ;
+    z-index: -1;
+    opacity: .7;
+}
+
+.welcome h2{
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.welcome p{
+    font-size: 14px;
+    line-height: 2;
+}
+
+@media (max-width:767px) {
+    .welcome h2{
+        font-size: 23px;
+    }
+
+    .welcome p{
+        font-size: 12px;
+    }
+    
+}
+
+/* End Landing  */
